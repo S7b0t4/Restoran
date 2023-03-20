@@ -21,8 +21,6 @@
     max-height: 17px;
     display: none;
 }
-@media screen and (max-width: 500px){
-}
 @media screen and (max-width: 1250px){
     .click{
         display: block;
@@ -94,6 +92,9 @@
     .body_4_block_row_item_bg{
         display: none;
     }
+    .body_5_block{
+        padding: 25px;
+    }
     .body_6_block_title{
         flex-direction: column;
         text-align: center;
@@ -113,9 +114,14 @@
         flex-direction: column;
     }
     .idk_img{
-        max-width: 90%;
+        width: 90%;
+        max-width: 368px;
         padding: 0;
         margin: 0 auto;
+    }
+    .body_3_block_row_colum_row_text{
+        flex-direction: column;
+        text-align: center;
     }
 }
 /*Header*/
