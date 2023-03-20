@@ -21,109 +21,6 @@
     max-height: 17px;
     display: none;
 }
-@media screen and (max-width: 1250px){
-    .click{
-        display: block;
-    }
-    .container{
-        max-width: 1000px;
-    }
-    .idk{
-        display: none;
-    }
-    .header_wrapper{
-        display: none;
-    }
-    .header_block_title{
-        font-size: 25px;
-    }
-    .header_block_subtitle{
-        font-size: 30px;
-        color: white;
-    }
-    .body_1_row{
-        flex-direction: column;
-        align-items: center;
-    }
-    .body_1_row_item{
-        margin-bottom: 14px;
-        width: 80%;
-    }
-    .header_block{
-        margin: 0 auto;
-    }
-    .body_1_block{
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .body_1_block_side_left_info_row{
-        flex-direction: column;
-        gap: 5px;
-    }
-    .body_1_block_side_right{
-        margin: 0 auto;
-    }
-    .body_1_block_side_left_title{
-        flex-direction: column;
-        text-align: center;
-    }
-    .body_2_block{
-        text-align: center;
-        flex-direction: column;
-        gap: 50px;
-    }
-    .body_3_block_title{
-        flex-direction: column;
-        text-align: center;
-    }
-    .body_3_block_row{
-        flex-direction: column;
-    }
-    .body_3_block_row_colum_row_title{
-        font-size: 10px;
-    }
-    .dots{
-        display: none;
-    }
-    .body_4_block_row_item_bg_recommended{
-        margin: 0 auto;
-    }
-    .body_4_block_row_item_bg{
-        display: none;
-    }
-    .body_5_block{
-        padding: 25px;
-    }
-    .body_6_block_title{
-        flex-direction: column;
-        text-align: center;
-    }
-    .body_6_block_second_title{
-        flex-direction: column;
-        text-align: center;
-    }
-    .body_6_block_images{
-        flex-direction: column;
-    }
-    .body_6_block_images_colum_row{
-        flex-direction: column;
-        gap: 20px;
-    }
-    .body_6_block_second_row{
-        flex-direction: column;
-    }
-    .idk_img{
-        width: 90%;
-        max-width: 368px;
-        padding: 0;
-        margin: 0 auto;
-    }
-    .body_3_block_row_colum_row_text{
-        flex-direction: column;
-        text-align: center;
-    }
-}
 /*Header*/
 .header{
     background: no-repeat center / cover url("./img/bg_for_header.png");
@@ -214,7 +111,7 @@
 }
 .body_1_row_item{
     background: #ffffff;
-    z-index: 100;
+    z-index: 5;
     position: relative;
     top: -100px;
     text-align: center;
@@ -502,4 +399,176 @@
 .sybota{
     color: white;
     text-align: end;
+}
+.burger{
+    cursor: pointer;
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+.burger span {
+    height: 2px;
+    width: 100%;
+    transform: scale(1);
+    background: #FF7400;
+}
+.burger::before, .burger::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #FF7400;
+    transition:  all 0.3s ease 0s;
+}
+.burger::before{
+    top: 0;
+}
+.burger::after{
+    bottom: 0;
+}
+.burger.active span{
+    transform: scale(0);
+}
+.burger.active::before{
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.burger.active::after{
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+.nav_bar{
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;bottom: 0;left: 0;right: 0;
+    z-index: 50;
+    overflow-y: auto;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.99);
+    color: white;
+}
+.open{
+    display: flex;
+}
+.nav_bar_list_item:hover{
+    color: #D67E34;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+@media screen and (max-width: 1250px){
+    .burger{
+        display: flex;
+        position: fixed;
+        right: 10%;
+    }
+    .click{
+        display: block;
+    }
+    .container{
+        max-width: 1000px;
+    }
+    .idk{
+        display: none;
+    }
+    .header_row_list{
+        display: none;
+    }
+    .header_block_title{
+        font-size: 25px;
+    }
+    .header_block_subtitle{
+        font-size: 30px;
+        color: white;
+    }
+    .body_1_row{
+        flex-direction: column;
+        align-items: center;
+    }
+    .body_1_row_item{
+        margin-bottom: 14px;
+        width: 80%;
+    }
+    .header_block{
+        margin: 0 auto;
+    }
+    .body_1_block{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .body_1_block_side_left_info_row{
+        flex-direction: column;
+        gap: 5px;
+    }
+    .body_1_block_side_right{
+        margin: 0 auto;
+    }
+    .body_1_block_side_left_title{
+        flex-direction: column;
+        text-align: center;
+    }
+    .body_2_block{
+        text-align: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .body_3_block_title{
+        flex-direction: column;
+        text-align: center;
+    }
+    .body_3_block_row{
+        flex-direction: column;
+    }
+    .body_3_block_row_colum_row_title{
+        font-size: 10px;
+    }
+    .dots{
+        display: none;
+    }
+    .body_4_block_row_item_bg_recommended{
+        margin: 0 auto;
+    }
+    .body_4_block_row_item_bg{
+        display: none;
+    }
+    .body_5_block{
+        padding: 25px;
+    }
+    .body_6_block_title{
+        flex-direction: column;
+        text-align: center;
+    }
+    .body_6_block_second_title{
+        flex-direction: column;
+        text-align: center;
+    }
+    .body_6_block_images{
+        flex-direction: column;
+    }
+    .body_6_block_images_colum_row{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .body_6_block_second_row{
+        flex-direction: column;
+    }
+    .idk_img{
+        width: 90%;
+        max-width: 368px;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .body_3_block_row_colum_row_text{
+        flex-direction: column;
+        text-align: center;
+    }
 }

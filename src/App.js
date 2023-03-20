@@ -18,32 +18,56 @@ import one from "./img/one.png"
 import two from "./img/two.png"
 import three from "./img/three.png"
 import string from "./img/string.png"
+import {useState} from "react";
 function App() {
+  const [vis, setVis] = useState(false)
+  const [open, setOpen] = useState("")
+  const [active, setActive] = useState("")
   return (
     <div className="App">
+      <div className={"nav_bar" + open}>
+        <div className="nav_bar_list_item">ГЛАВНАЯ</div>
+        <div className="nav_bar_list_item">МЕНЮ</div>
+        <div className="nav_bar_list_item">О НАС</div>
+        <div className="nav_bar_list_item">БРОНЬ</div>
+        <div className="nav_bar_list_info">
+          <button className="btn">ЗАКАЗ СТОЛИКА</button>
+        </div>
+      </div>
       <div className="header">
         <div className="container">
           <div className="header_row">
             <div className="header_logo"><img src={header_logo} alt=""/></div>
-            <img className="click" src={string} alt=""/>
-            <div className="header_wrapper">
-              <div className="header_row_list">
-                <div className="header_row_list_item">ГЛАВНАЯ</div>
-                <div className="header_row_list_item">МЕНЮ</div>
-                <div className="header_row_list_item">О НАС</div>
-                <div className="header_row_list_item">БРОНЬ</div>
-                <div className="header_row_list_info">
-                  <img src={cart} alt="" className="cart"/>
-                  <div className="header_row_list_info_block">
-                    <div className="header_row_list_info_number">
-                      <div className="header_row_list_info_number_img"><img src={phone} alt=""/></div>
-                      <div className="header_row_list_info_number_number">+999-888-76-54</div>
-                    </div>
-                    <div className="header_row_list_info_number_text">Свяжитесь с нами для
-                      бронирования</div>
+            <div onClick={
+              ()=>{
+                setVis(!vis)
+                if(vis){
+                  setOpen(" open")
+                  setActive(" active")
+                }else{
+                  setOpen("")
+                  setActive("")
+                }
+              }
+            } className={"burger" + active}>
+              <span></span>
+            </div>
+            <div className="header_row_list">
+              <div className="header_row_list_item">ГЛАВНАЯ</div>
+              <div className="header_row_list_item">МЕНЮ</div>
+              <div className="header_row_list_item">О НАС</div>
+              <div className="header_row_list_item">БРОНЬ</div>
+              <div className="header_row_list_info">
+                <img src={cart} alt="" className="cart"/>
+                <div className="header_row_list_info_block">
+                  <div className="header_row_list_info_number">
+                    <div className="header_row_list_info_number_img"><img src={phone} alt=""/></div>
+                    <div className="header_row_list_info_number_number">+999-888-76-54</div>
                   </div>
-                  <button className="btn">ЗАКАЗ СТОЛИКА</button>
+                  <div className="header_row_list_info_number_text">Свяжитесь с нами для
+                    бронирования</div>
                 </div>
+                <button className="btn">ЗАКАЗ СТОЛИКА</button>
               </div>
             </div>
           </div>
