@@ -20,7 +20,7 @@ import three from "./img/three.png"
 import string from "./img/string.png"
 import {useState} from "react";
 function App() {
-  const [vis, setVis] = useState(false)
+  const [vis, setVis] = useState(true)
   const [open, setOpen] = useState("")
   const [active, setActive] = useState("")
   return (
@@ -41,6 +41,7 @@ function App() {
             <div onClick={
               ()=>{
                 setVis(!vis)
+                console.log(vis)
                 if(vis){
                   setOpen(" open")
                   setActive(" active")
@@ -71,15 +72,17 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="header_block">
-            <div className="header_block_title">Добро пожаловать в</div>
-            <div className="header_block_subtitle">Наш ресторан</div>
-            <div className="header_block_subsubtitle">
-              <img src={line} alt=""/>
-              <div className="header_block_subsubtitle_text">ДОМ ЛУЧШЕЙ ЕДЫ</div>
-              <img src={line} alt=""/>
+          <div className="header_block_container">
+            <div className="header_block">
+              <div className="header_block_title">Добро пожаловать в</div>
+              <div className="header_block_subtitle">Наш ресторан</div>
+              <div className="header_block_subsubtitle">
+                <img src={line} alt=""/>
+                <div className="header_block_subsubtitle_text">ДОМ ЛУЧШЕЙ ЕДЫ</div>
+                <img src={line} alt=""/>
+              </div>
+              <div className="btn header_block_btn">VIEW MENU</div>
             </div>
-            <div className="btn header_block_btn">VIEW MENU</div>
           </div>
         </div>
       </div>
