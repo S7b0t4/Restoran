@@ -395,7 +395,7 @@
     background: no-repeat center / cover  url("./img/footer_bg.png");
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .sybota{
     color: white;
