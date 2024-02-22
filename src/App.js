@@ -17,7 +17,6 @@ import goulash from "./img/goulash.png"
 import one from "./img/one.png"
 import two from "./img/two.png"
 import three from "./img/three.png"
-import string from "./img/string.png"
 import {useState} from "react";
 function App() {
   const [vis, setVis] = useState(true)
