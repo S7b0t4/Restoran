@@ -24,7 +24,7 @@
 /*Header*/
 .header{
     background: no-repeat center / cover url("./img/bg_for_header.png");
-    height: 99vh;
+    height: 100vh;
 }
 .header_row{
     align-items: center;
